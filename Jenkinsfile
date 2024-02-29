@@ -1,11 +1,10 @@
 pipeline {
     agent any
 
-    tools {
-        // Specify the JDK and Android SDK tools you have configured in Jenkins Global Tool Configuration
-        jdk 'JDK_Name'
-        androidSdk 'Android_SDK_Name'
-    }
+    // tools {
+    //     // Specify the JDK and Android SDK tools you have configured in Jenkins Global Tool Configuration
+    //     jdk 'JDK_Name'
+    // }
 
     environment {
         // Set the path for the Android SDK, which might be needed for your builds
@@ -34,9 +33,11 @@ pipeline {
         // Define post-build actions such as cleanup, notifications, etc.
         success {
             // Actions to take on successful build
+            echo 'Build was successful.'
         }
         failure {
             // Actions to take if the build fails
+            echo 'Build failed.'
         }
     }
 }
